@@ -1,0 +1,19 @@
+.progress {
+    height: 15px;
+    width: 30%;
+} 
+
+.progressLife {
+    border: 1px solid gray;
+    background-color: rgb(148, 231, 148);
+    width: 30%;
+}
+  
+.progressLife::-webkit-progress-value {
+    background-color: rgb(111, 206, 127);
+  }
+  
+.progressLife::-webkit-progress-bar {
+    background-color: #FFF;
+    
+  }
