@@ -33,7 +33,7 @@
   width: 70%;
   margin: 10px auto;
   text-align: center;
-  
+  font-size: 30px;
 }
 
 .total {
@@ -46,5 +46,14 @@
 
 .text {
   color: rgb(185, 101, 22);
-  font-size: 20px;
+  font-size: 30px;
+}
+
+.button {
+  font-size: 22px;
+  background-color: rgba(126, 126, 224, 0.371);
+}
+
+.inputName {
+  font-size: 22px;
 }

@@ -69,7 +69,7 @@ function getName() {
     input.value = '';
 }
 
-function btnDisabled() {
+function switchButtonState() {
     if (input.value.length < 3) {
         creationButton.disabled = 1;
     } else {
@@ -77,7 +77,7 @@ function btnDisabled() {
     }
 }
 
-input.addEventListener('keyup', btnDisabled);
+input.addEventListener('keyup', switchButtonState);
 creationButton.addEventListener('click', create);
 creationButton.addEventListener('click', getName);
 
@@ -93,15 +93,15 @@ medicateButton.addEventListener('click', () => tamagochi.medicate());
 
 hugsButton.addEventListener('click', () => tamagochi.hugs());
 
-function howAreYou() {
+function getLifeValue() {
     let arrOfValues = Array.of(bellyful.value, cleanness.value, rest.value, health.value, happiness.value);
     let sumValues = arrOfValues.reduce((accumulator, currentValue) => accumulator + currentValue, 0
     );
     let lifeValue = sumValues / arrOfValues.length;
     life.value = lifeValue;
-    goodbye();
+    killTamagochi();
 }
-setInterval(howAreYou, 500);
+setInterval(getLifeValue, 500);
 
 function reduceValues() {
     let random = Math.floor(Math.random() * 10);
@@ -119,7 +119,7 @@ function reduceValues() {
 }
 setInterval(reduceValues, 1000);
 
-function goodbye() {
+function killTamagochi() {
     if (life.value === 0) {
         img.src = 'img/dead-smile.jpg';
         text.innerText = 'Господар з тебе не дуже.';
@@ -129,7 +129,6 @@ function goodbye() {
         playButton.disabled = true;
         hugsButton.disabled = true;
         medicateButton.disabled = true;
-        
     } else {
         feedButton.disabled = false;
         washButton.disabled = false;
@@ -138,5 +137,4 @@ function goodbye() {
         hugsButton.disabled = false;
         medicateButton.disabled = false;
     }
-
 }
