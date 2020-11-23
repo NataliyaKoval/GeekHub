@@ -11,6 +11,11 @@ const cleanness = document.querySelector('[data-cleanness]');
 const rest = document.querySelector('[data-rest]');
 const health = document.querySelector('[data-health]');
 const happiness = document.querySelector('[data-happiness]');
+const imgTamagochi = document.querySelector('[data-img]');
+const input = document.querySelector('[data-input]');
+const textArea = document.querySelector('[data-text]');
+let img = document.createElement('img');
+let text = document.createElement('p');
 let tamagochi;
 
 class Tamagochi {
@@ -51,10 +56,30 @@ class Tamagochi {
 
 function create() {
     tamagochi = new Tamagochi;
+    img.src='img/smile.jpg';
+    img.classList.add('smallPicture')
+    imgTamagochi.appendChild(img);
+    creationButton.disabled = 1;
 }
 
-creationButton.addEventListener('click', create);
+function getName() {
+    let name = input.value;
+    text.innerText = `Привіт! Я ${name}. Піклуйся про мене!`;
+    textArea.appendChild(text);
+    input.value = '';
+}
 
+function btnDisabled() {
+    if (input.value.length < 3) {
+        creationButton.disabled = 1;
+    } else {
+        creationButton.disabled = 0;
+    }
+}
+
+input.addEventListener('keyup', btnDisabled);
+creationButton.addEventListener('click', create);
+creationButton.addEventListener('click', getName);
 
 feedButton.addEventListener('click', () => tamagochi.feed());
 
@@ -96,12 +121,15 @@ setInterval(reduceValues, 1000);
 
 function goodbye() {
     if (life.value === 0) {
+        img.src = 'img/dead-smile.jpg';
+        text.innerText = 'Господар з тебе не дуже.';
         feedButton.disabled = true;
         washButton.disabled = true;
         sleepButton.disabled = true;
         playButton.disabled = true;
         hugsButton.disabled = true;
         medicateButton.disabled = true;
+        
     } else {
         feedButton.disabled = false;
         washButton.disabled = false;
@@ -110,4 +138,5 @@ function goodbye() {
         hugsButton.disabled = false;
         medicateButton.disabled = false;
     }
+
 }

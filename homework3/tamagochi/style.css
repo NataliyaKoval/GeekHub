@@ -11,9 +11,40 @@
   
 .progressLife::-webkit-progress-value {
     background-color: rgb(111, 206, 127);
-  }
+}
   
 .progressLife::-webkit-progress-bar {
     background-color: #FFF;
     
-  }
+}
+
+.imgTamagochi {
+  width: 200px;
+  height: 200px;
+  margin: 10px auto;
+}
+
+.smallPicture {
+  width: 150px;
+  height: 150px;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 10px auto;
+  text-align: center;
+  
+}
+
+.total {
+  margin-bottom: 30px;
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+.text {
+  color: rgb(185, 101, 22);
+  font-size: 20px;
+}
