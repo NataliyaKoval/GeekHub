@@ -1,0 +1,43 @@
+.slider-wrapper {
+    border: 1px solid black;
+    width: 650px;
+    height: 350px;
+    margin: 50px auto;
+    position: relative;
+    
+}
+
+.slider {
+    width: 650px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider img {
+    width: 650px;
+    height: 350px;
+    position: absolute;
+    opacity: 1;
+    transition: all ease 1s;
+}
+
+.slider .opacity0 {
+    opacity: 0;
+}
+
+.btnLeft, .btnRight {
+    width: 48px;
+    height: 48px;
+    background: url('imgs/arrow-left.png');
+    background-size: contain;
+}
+
+.btnRight {
+    background: url('imgs/arrow-right.png');
+}
+
+.moveButtons {
+    display: flex;
+    justify-content: space-between;
+}
