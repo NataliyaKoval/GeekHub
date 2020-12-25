@@ -1,0 +1,41 @@
+.main-element {
+    background-image: url(https://kikill95.github.io/Tagging/image.jpg);
+    background-repeat: no-repeat;
+    width: 512px;
+    height: 512px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#id1 {
+    position: absolute;
+    /* top: 20px;
+    left: 730px; */
+}
+
+#id2 {
+    position: absolute;
+    top: 80px;
+    left: 840px;
+}
+
+#id3 {
+    position: absolute;
+    top: 200px;
+    left: 690px;
+}
+
+.text, .delete {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: rgba(34,34,34,.75);
+    border: 1px solid #000;
+    opacity: .9;
+    padding: 5px 15px;
+    color: white;
+
+}
+
+.hide {
+    display: none;
+}
