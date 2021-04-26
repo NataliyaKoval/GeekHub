@@ -110,6 +110,10 @@
     min-height: 200px;
 }
 
+.withoutMarkers {
+    list-style: none;
+}
+
 @media screen and (max-width: 350px) {
     .header {
         display: grid;
