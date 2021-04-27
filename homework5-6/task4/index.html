@@ -6,77 +6,118 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        function isPrime(num) {
-            if (num === 1) {
+<script>
+    function isPrime(num) {
+        if (num === 1) {
+            return false;
+        } else if (num === 2) {
+            return true;
+        } else {
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    function factorial(num) {
+        let answer = 1;
+        if (num === 0 || num === 1) {
+            return answer;
+        } else {
+            for (let i = num; i >= 1; i--) {
+                answer = answer * i;
+            }
+            return answer;
+        }
+    }
+
+    function fib(num) {
+        let a = 0;
+        let b = 1;
+        let c = 0;
+
+        for (let i = 2; i <= num; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        return num ? b : a;
+    }
+
+    function isSorted(arr) {
+        let arrItem = arr[0];
+        for (let i = 1; i <= arr.length; i++) {
+            if (arrItem > arr[i]) {
                 return false;
-            } else if(num === 2) {
-                return true;
-            } else {
-                for(var i = 2; i < num; i++) {
-                    if(num % i === 0) {
-                        return false;
-                    }
-                }
-                return true;  
             }
-        } 
-        
-        function factorial(num) {
-            let answer = 1;
-            if (num === 0 || num === 1) {
-                return answer;
-            } else {
-                for (let i = num; i >= 1; i--) {
-                    answer = answer * i;
-                }
-                return answer;
-            }  
+            arrItem = arr[i];
         }
-        
-        function fib(num) {
-            let a = 0;
-            let b = 1;
-            let c = 0;
- 
-            for(let i = 2; i <= num; i++){
-                c = a + b;      
-                a = b; 
-                b = c; 
+        return true;
+    }
+
+    function reverse(str) {
+        let newStr = '';
+        for (let i = str.length - 1; i >= 0; i--) {
+            newStr += str[i];
+        }
+        return newStr;
+    }
+
+    function indexOf(arr, searchElement) {
+        for (let i = 0; i <= arr.length; i++) {
+            if (searchElement === arr[i]) {
+                return i;
             }
-            return num ? b : a;
+        }
+        return -1;
+    }
+
+    function isPalindrome(string) {
+        if (string.toLowerCase().replace(/\s/gm, '') === string.replace(/\s/gm, '').split('').reverse().join('').toLowerCase()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function missing(arr) {
+        let count;
+        let missing = [];
+
+        if (!arr.length) {
+            return undefined;
         }
 
-        function reverse(str) {
-            let newStr = '';
-            for (let i = str.length - 1; i >= 0; i--) {
-                newStr += str[i];
+        count = Math.max(...arr);
+        for (let i = 1; i <= count; i++) {
+            if (arr.indexOf(i) === -1) {
+                missing.push(i);
             }
-            return newStr;
-}
-        
-        // function isSorted(arr) {
-        //     if (arr.length <= 1) {
-        //         return true;
-        //     }
-            // arr.every(
-            //     function checkArr(currentValue) {
-            //         if (arr[i] > arr[i+1]) {
-            //             return true;
-            //         } else {
-            //             return false;
-            //         }
-            //     })
-        
-        //     for (let i = 0; i < arr.length - 1; i++) {
-        //         if (arr[i] < arr[i+1]) {
-        //             return true;
-        //         } else {
-        //             return false;
-        //         }
-        //     }
-        // }
+        }
+        return missing;
+    }
 
-    </script>
+    function isBalanced(str) {
+        let depth = 0;
+        for (let i in str) {
+            if (str[i] === '{') {
+                depth++;
+            } else if (str[i] === '}') {
+                depth--;
+            }
+            if (depth < 0) {
+                return false;
+            }
+        }
+        if (depth > 0) {
+            return false;
+        }
+        return true;
+    }
+
+</script>
 </body>
 </html>
